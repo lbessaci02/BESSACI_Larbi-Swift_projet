@@ -1,5 +1,4 @@
 import Foundation
-import Dispatch
 
 // Structure de données pour représenter une question
 struct Question: Codable {
@@ -11,19 +10,11 @@ struct Question: Codable {
     let category: String
 }
 
-// Structure de données pour représenter un joueur avec le niveau de difficulté
+// Structure de données pour représenter un joueur
 struct Player: Codable {
     var nom: String
     var score: Int
     var rang: Int
-    var difficulty: Int
-    
-    init(nom: String, score: Int, rang: Int, difficulty: Int) {
-        self.nom = nom
-        self.score = score
-        self.rang = rang
-        self.difficulty = difficulty
-    }
 }
 
 // Charger les questions à partir du fichier Questions.json
@@ -47,7 +38,8 @@ func updatePlayerData(userName: String, userScore: Int, difficulty: Int) {
     var players = [Player]()
     
     // Charger les données des joueurs depuis le fichier Joueurs.json s'il existe
-    if let path = Bundle.main.path(forResource: "Joueurs", ofType: "json") {
+    let fileName = "Joueurs_\(difficulty).json"
+    if let path = Bundle.main.path(forResource: fileName, ofType: nil) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             players = try JSONDecoder().decode([Player].self, from: data)
@@ -58,36 +50,37 @@ func updatePlayerData(userName: String, userScore: Int, difficulty: Int) {
     
     // Mettre à jour les données du joueur actuel ou ajouter un nouveau joueur
     if let playerIndex = players.firstIndex(where: { $0.nom == userName }) {
+        // Mettre à jour le joueur existant
         players[playerIndex].score = userScore
     } else {
-        let newPlayer = Player(nom: userName, score: userScore, rang: 0, difficulty: difficulty) // Rang initial à 0
-        players.append(newPlayer)
+        // Ajouter un nouveau joueur
+        players.append(Player(nom: userName, score: userScore, rang: 0))
     }
     
-    // Mettre à jour les rangs en fonction des scores
-    players.sort { $0.score > $1.score }
-    for (index, var player) in players.enumerated() {
-        player.rang = index + 1
-        players[index] = player
+    // Trier les joueurs par score décroissant
+    players.sort(by: { $0.score > $1.score })
+    
+    // Mettre à jour les rangs des joueurs
+    for (index, _) in players.enumerated() {
+        players[index].rang = index + 1
     }
     
     // Enregistrer les données mises à jour dans le fichier Joueurs.json
     do {
         let jsonData = try JSONEncoder().encode(players)
-        if let jsonString = String(data: jsonData, encoding: .utf8) {
-            try jsonString.write(toFile: "Joueurs.json", atomically: true, encoding: .utf8)
-        }
+        try jsonData.write(to: URL(fileURLWithPath: fileName))
     } catch {
         print("Erreur lors de l'enregistrement des données des joueurs: \(error)")
     }
 }
 
-// Fonction pour afficher le classement des joueurs par niveau de difficulté
-func displayPlayerRanking(difficulty: Int) {
+// Fonction pour afficher le classement des joueurs pour un niveau donné
+func displayPlayerRanking(forDifficulty difficulty: Int) {
     var players = [Player]()
     
     // Charger les données des joueurs depuis le fichier Joueurs.json s'il existe
-    if let path = Bundle.main.path(forResource: "Joueurs", ofType: "json") {
+    let fileName = "Joueurs_\(difficulty).json"
+    if let path = Bundle.main.path(forResource: fileName, ofType: nil) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             players = try JSONDecoder().decode([Player].self, from: data)
@@ -97,14 +90,10 @@ func displayPlayerRanking(difficulty: Int) {
         }
     }
     
-    // Filtrer et trier les joueurs par niveau de difficulté
-    let filteredPlayers = players.filter { $0.score > 0 && $0.difficulty == difficulty }
-    let sortedPlayers = filteredPlayers.sorted { $0.score > $1.score }
-    
-    // Afficher le classement des joueurs
-    print("\nClassement des joueurs pour la difficulté \(difficulty):\n")
-    for (index, player) in sortedPlayers.enumerated() {
-        print("\(index + 1). Joueur: \(player.nom) - Score: \(player.score) - Rang: \(player.rang)")
+    // Afficher le classement des joueurs pour le niveau de difficulté donné
+    print("\nClassement des joueurs pour le niveau de difficulté \(difficulty):")
+    for player in players {
+        print("Joueur: \(player.nom) - Score: \(player.score) - Rang: \(player.rang)")
     }
 }
 
@@ -115,8 +104,8 @@ func playQuizGame(questions: [Question], userName: String, difficulty: Int) {
     print("Bienvenue dans le jeu de quiz !")
     print("----------------------------------")
     
-    for question in questions.shuffled() {
-        print("\nQuestion: \(question.question)")
+    for (questionIndex, question) in questions.shuffled().enumerated() {
+        print("\nQuestion \(questionIndex + 1): \(question.question)")
         
         for (index, option) in question.options.enumerated() {
             print("\(index + 1). \(option)")
@@ -132,7 +121,9 @@ func playQuizGame(questions: [Question], userName: String, difficulty: Int) {
             if let choiceString = readLine(), let choice = Int(choiceString), (1...question.options.count).contains(choice) {
                 userChoice = choice
             } else {
+                print("----------------------------------")
                 print("Choix invalide. Veuillez saisir un choix valide.")
+                print("----------------------------------")
             }
         } while userChoice == nil
         
@@ -160,11 +151,7 @@ func playQuizGame(questions: [Question], userName: String, difficulty: Int) {
 // Fonction de validation du nom
 func isValidName(_ name: String) -> Bool {
     let nameRegex = "^[a-zA-Z]+$"
-    if let range = name.range(of: nameRegex, options: .regularExpression) {
-        return range.lowerBound == name.startIndex && range.upperBound == name.endIndex
-    } else {
-        return false
-    }
+    return name.range(of: nameRegex, options: .regularExpression) != nil
 }
 
 // Fonction de validation de la difficulté
@@ -221,21 +208,12 @@ func main() {
     // Jouer le jeu de quiz avec les questions du niveau de difficulté choisi
     playQuizGame(questions: questions, userName: userName, difficulty: difficulty)
     
-    // Afficher le classement des joueurs
-    print("Merci d'avoir joué !")
+    // Afficher le classement des joueurs pour le niveau de difficulté choisi
+    print("Merci d'avoir joué, \(userName) !")
     print("----------------------------------")
-    
-    // Afficher le classement des joueurs par niveau de difficulté
-    displayPlayerRanking(difficulty: difficulty)
+    displayPlayerRanking(forDifficulty: difficulty)
     print("\n----------------------------------")
 }
 
 // Appel de la fonction principale
-while true {
-    main()
-    
-    print("\nVoulez-vous quitter le programme ? (0 = Oui, 1 = Non): ")
-    if let response = readLine(), response.lowercased() == "0" {
-        break
-    }
-}
+main()
