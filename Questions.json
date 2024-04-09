@@ -1,0 +1,194 @@
+[
+    {
+        "question": "Quel club a remporté le plus de Ligue des Champions de l'UEFA ?",
+        "options": ["Real Madrid", "FC Barcelone", "Bayern Munich", "Liverpool"],
+        "correctAnswer": 0,
+        "infos": "Le Real Madrid est le club qui a remporté le plus de Ligue des Champions de l'UEFA, avec 14 titres.",
+        "difficulty": 1,
+        "category": "Football"
+    },
+    {
+        "question": "Quel club a remporté le plus de championnats de France de Ligue 1 ?",
+        "options": ["Olympique de Marseille", "AS Saint-Étienne", "Paris Saint-Germain", "AS Monaco"],
+        "correctAnswer": 2,
+        "infos": "Le Paris Saint-Germain est le club qui a remporté le plus de championnats de France de Ligue 1, avec 11 titres.",
+        "difficulty": 1,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a remporté le plus de Ballon d'Or ?",
+        "options": ["Lionel Messi", "Cristiano Ronaldo", "Michel Platini", "Johan Cruyff"],
+        "correctAnswer": 0,
+        "infos": "Lionel Messi est le joueur qui a remporté le plus de Ballon d'Or, avec 8 titres.",
+        "difficulty": 1,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a remporté Ballon d'Or africain en 2016 ?",
+        "options": ["Sadio Mané", "Mohamed Salah", "Riyad Mahrez", "Pierre-Emerick Aubameyang"],
+        "correctAnswer": 2,
+        "infos": "Riyad Mahrez est le joueur qui a remporté Ballon d'Or africain en 2016.",
+        "difficulty": 2,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a marqué le plus de buts en Coupe du Monde de la FIFA ?",
+        "options": ["Pelé", "Miroslav Klose", "Ronaldo", "Gerd Müller"],
+        "correctAnswer": 1,
+        "infos": "Miroslav Klose est le joueur qui a marqué le plus de buts en Coupe du Monde de la FIFA, avec 16 buts.",
+        "difficulty": 2,
+        "category": "Football"
+    },
+    {
+        "question": "Quel club n'a jamais remporté la Ligue des Champions de l'UEFA ?",
+        "options": ["Manchester City", "Aston Villa", "Real Madrid", "Paris Saint-Germain"],
+        "correctAnswer": 3,
+        "infos": "Le Paris Saint-Germain est le club qui n'a jamais remporté la Ligue des Champions de l'UEFA.",
+        "difficulty": 2,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a marqué le plus de buts en une saison de Ligue 1 ?",
+        "options": ["Josip Skoblar", "Jean-Pierre Papin", "Zlatan Ibrahimović", "Kylian Mbappé"],
+        "correctAnswer": 0,
+        "infos": "Josip Skoblar est le joueur qui a marqué le plus de buts en une saison de Ligue 1, avec 44 buts en 1970-1971.",
+        "difficulty": 3,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a remporté le plus de Coupe du Monde de la FIFA ?",
+        "options": ["Pelé", "Diego Maradona", "Zinédine Zidane", "Ronaldo"],
+        "correctAnswer": 0,
+        "infos": "Pelé est le joueur qui a remporté le plus de Coupe du Monde de la FIFA, avec 3 titres.",
+        "difficulty": 3,
+        "category": "Football"
+    },
+    {
+        "question": "Quel joueur a marqué le plus de buts en une saison de Premier League ?",
+        "options": ["Alan Shearer", "Erling Haaland", "Mohamed Salah", "Harry Kane"],
+        "correctAnswer": 1,
+        "infos": "Erling Haaland est le joueur qui a marqué le plus de buts en une saison de Premier League, avec 33 buts en 2022-2023.",
+        "difficulty": 3,
+        "category": "Football"
+    },
+    {
+        "question": "Quel est le plus grand pays du monde en superficie ?",
+        "options": ["Canada", "Russie", "Chine", "États-Unis"],
+        "correctAnswer": 1,
+        "infos": "La Russie est le plus grand pays du monde en superficie avec 17 098 242 km².",
+        "difficulty": 1,
+        "category": "Pays"
+    },
+    {
+        "question": "Quel est le pays possédant le plus grand nombre de rond-points ?",
+        "options": ["France", "États-Unis", "Royaume-Uni", "Allemagne"],
+        "correctAnswer": 0,
+        "infos": "La France est le pays possédant le plus grand nombre de rond-points avec plus de 30 000.",
+        "difficulty": 1,
+        "category": "Pays"
+    },
+    {
+        "question": "Quel est le pays africain le plus peuplé ?",
+        "options": ["Nigéria", "Éthiopie", "Égypte", "République démocratique du Congo"],
+        "correctAnswer": 0,
+        "infos": "Le Nigéria est le pays africain le plus peuplé avec plus de 200 millions d'habitants.",
+        "difficulty": 2,
+        "category": "Pays"
+    },
+    {
+        "question": "Quel est le plus petit pays du monde en superficie ?",
+        "options": ["Malte", "Monaco", "Vatican", "Andorre"],
+        "correctAnswer": 2,
+        "infos": "Le Vatican est le plus petit pays du monde en superficie avec 0,44 km².",
+        "difficulty": 2,
+        "category": "Pays"
+    },
+    {
+        "question": "Quel est le pays avec le plus haut PIB par habitant en 2020 ?",
+        "options": ["États-Unis", "Suisse", "Norvège", "Luxembourg"],
+        "correctAnswer": 3,
+        "infos": "Le Luxembourg avait le plus haut PIB par habitant en 2020 avec 115 700 dollars.",
+        "difficulty": 3,
+        "category": "Pays"
+    },
+    {
+        "question": "Quel est le pays le plus densément peuplé du monde ?",
+        "options": ["Inde", "Bangladesh", "Japon", "Corée du Sud"],
+        "correctAnswer": 1,
+        "infos": "Le Bangladesh est le pays le plus densément peuplé du monde avec 1 265 habitants par km².",
+        "difficulty": 3,
+        "category": "Pays"
+    },
+    {
+        "question": "Quelle année a marqué le début de la Première Guerre mondiale ?",
+        "options": ["1914", "1918", "1939", "1945"],
+        "correctAnswer": 0,
+        "infos": "La Première Guerre mondiale a débuté en 1914 et a duré jusqu'en 1918.",
+        "difficulty": 1,
+        "category": "Histoire"
+    },
+    {
+        "question": "Qui était le premier président des États-Unis ?",
+        "options": ["Abraham Lincoln", "Thomas Jefferson", "George Washington", "John F. Kennedy"],
+        "correctAnswer": 2,
+        "infos": "George Washington a été le premier président des États-Unis, servant de 1789 à 1797.",
+        "difficulty": 1,
+        "category": "Histoire"
+    },
+    {
+        "question": "Quel événement a déclenché la Révolution française ?",
+        "options": ["La prise de la Bastille", "L'exécution de Louis XVI", "La déclaration des Droits de l'Homme et du Citoyen", "Le serment du Jeu de Paume"],
+        "correctAnswer": 0,
+        "infos": "La prise de la Bastille le 14 juillet 1789 est considérée comme le début de la Révolution française.",
+        "difficulty": 1,
+        "category": "Histoire"
+    },
+    {
+        "question": "Qui était le dirigeant de l'Union soviétique pendant la Seconde Guerre mondiale ?",
+        "options": ["Joseph Staline", "Vladimir Lénine", "Mikhaïl Gorbatchev", "Nikita Khrouchtchev"],
+        "correctAnswer": 0,
+        "infos": "Joseph Staline était le dirigeant de l'Union soviétique pendant la Seconde Guerre mondiale.",
+        "difficulty": 2,
+        "category": "Histoire"
+    },
+    {
+        "question": "Quelle bataille a marqué la fin de Napoléon Bonaparte ?",
+        "options": ["Bataille de Waterloo", "Bataille d'Austerlitz", "Bataille de Trafalgar", "Bataille de Leipzig"],
+        "correctAnswer": 0,
+        "infos": "La défaite de Napoléon à la Bataille de Waterloo en 1815 a marqué la fin de son règne.",
+        "difficulty": 2,
+        "category": "Histoire"
+    },
+    {
+        "question": "Quel était le nom de l'empereur romain qui a brûlé Rome ?",
+        "options": ["Auguste", "Caligula", "Néron", "Trajan"],
+        "correctAnswer": 2,
+        "infos": "Néron était l'empereur romain qui aurait incendié Rome en 64 après J.-C.",
+        "difficulty": 2,
+        "category": "Histoire"
+    },
+    {
+        "question": "Quel pays a été le premier à envoyer un homme dans l'espace ?",
+        "options": ["États-Unis", "Union soviétique", "Chine", "France"],
+        "correctAnswer": 1,
+        "infos": "L'Union soviétique a été le premier pays à envoyer un homme dans l'espace avec Youri Gagarine en 1961.",
+        "difficulty": 3,
+        "category": "Histoire"
+    },
+    {
+        "question": "Quel événement a déclenché la Révolution industrielle ?",
+        "options": ["L'invention de la machine à vapeur", "La découverte de l'Amérique", "La Révolution française", "La fin de la Guerre de Sécession"],
+        "correctAnswer": 0,
+        "infos": "L'invention de la machine à vapeur a joué un rôle majeur dans le déclenchement de la Révolution industrielle.",
+        "difficulty": 3,
+        "category": "Histoire"
+    },
+    {
+        "question": "Qui a été le premier empereur de la dynastie Ming en Chine ?",
+        "options": ["Hongwu", "Kubilai Khan", "Yongle", "Qianlong"],
+        "correctAnswer": 0,
+        "infos": "Hongwu a été le premier empereur de la dynastie Ming en Chine, régnant de 1368 à 1398.",
+        "difficulty": 3,
+        "category": "Histoire"
+    }
+]
